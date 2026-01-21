@@ -6,8 +6,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
@@ -59,9 +57,6 @@ const defaultCards: Card[] = [
 export function CardsSliderSection({
   badge = 'Prehľad funkcií',
   heading = 'Inteligentné nástroje pre moderné ubytovanie',
-  description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  buttonText = 'Vyskúšať zdarma',
-  onButtonClick,
   cards = defaultCards,
 }: CardsSliderSectionProps) {
   const [api, setApi] = useState<CarouselApi>()

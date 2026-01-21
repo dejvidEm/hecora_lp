@@ -1,7 +1,6 @@
 'use client'
 
 import { Badge } from '@/components/ui/badge'
-import { cn } from '@/lib/utils'
 
 interface ImageGallerySectionProps {
   badge?: string
@@ -16,11 +15,9 @@ interface ImageGallerySectionProps {
 export function ImageGallerySection({
   badge = 'Ako to funguje',
   heading = 'Celý zážitok vašich hostí v 3 jednoduchých krokoch',
-  description,
   mainImage = '/main.png',
   mainImageAlt = 'Main gallery image',
   smallImages = ['/gallery-1.jpg', '/gallery-2.jpg', '/gallery-3.jpg'],
-  smallImagesAlt = ['Gallery image 1', 'Gallery image 2', 'Gallery image 3'],
 }: ImageGallerySectionProps) {
   return (
     <section className="w-full py-16 md:py-24 px-6 bg-white">
@@ -46,11 +43,6 @@ export function ImageGallerySection({
                 heading
               )}
             </h2>
-          )}
-          {description && (
-            <p className="text-lg md:text-xl text-[#1a2b4a]/70 max-w-2xl mx-auto">
-              {description}
-            </p>
           )}
         </div>
 
@@ -82,7 +74,7 @@ export function ImageGallerySection({
 
               {/* Three Small Images - Side by Side */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3">
-                {smallImages.slice(0, 3).map((src, index) => {
+                {smallImages.slice(0, 3).map((_src, index) => {
                   const formattedNumber = String(index + 1).padStart(2, '0')
                   return (
                     <div
