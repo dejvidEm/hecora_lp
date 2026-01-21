@@ -1,4 +1,4 @@
-import { Button } from '@library-ui/components'
+import { Button } from '@/components/ui/button-library'
 
 export default function Navbar() {
   return (

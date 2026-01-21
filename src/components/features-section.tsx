@@ -66,26 +66,26 @@ interface FeaturesSectionProps {
 const defaultCards: FeatureCard[] = [
   {
     id: '1',
-    title: 'Funkcia 1',
-    description: 'Popis prvej funkcie',
+    title: 'Malé a stredné hotely',
+    description: 'Lorem ipsum dolor sit ameturis vel consectetur. At nunc sit placerat varius ultrices vitae leo orci. Arcu.',
     image: '/f/f1.png',
   },
   {
     id: '2',
-    title: 'Funkcia 2',
-    description: 'Popis druhej funkcie',
+    title: 'Malé a stredné hotely',
+    description: 'Lorem ipsum dolor sit ameturis vel consectetur. At nunc sit placerat varius ultrices vitae leo orci. Arcu.',
     image: '/f/f2.png',
   },
   {
     id: '3',
-    title: 'Funkcia 3',
-    description: 'Popis tretej funkcie',
+    title: 'Veľké hotelové komplexy',
+    description: 'Lorem ipsum dolor sit ameturis vel consectetur. At nunc sit placerat varius ultrices vitae leo orci. Arcu.',
     image: '/f/f3.png',
   },
   {
     id: '4',
-    title: 'Funkcia 4',
-    description: 'Popis štvrtej funkcie',
+    title: 'Správcovia objektov',
+    description: 'Lorem ipsum dolor sit ameturis vel consectetur. At nunc sit placerat varius ultrices vitae leo orci. Arcu.',
     image: '/f/f4.png',
   },
 ]
@@ -258,9 +258,12 @@ function FeatureCard({
         {card.description && (
           <div
             className={cn(
-              'overflow-hidden transition-all duration-300 ease-in-out w-full',
+              'overflow-hidden transition-all duration-500 ease-out w-full',
               isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
             )}
+            style={{
+              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+            }}
           >
             <p className="text-white text-sm md:text-base pt-2">
               {card.description}

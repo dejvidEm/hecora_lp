@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from "@library-ui/components"
+import { Button } from "@/components/ui/button-library"
 
 const navItems = [
   { label: "O nás", href: "#" },

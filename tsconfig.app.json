@@ -19,8 +19,7 @@
     /* Path mapping */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@library-ui/*": ["../library-ui/src/*"]
+      "@/*": ["./src/*"]
     },
 
     /* Linting */

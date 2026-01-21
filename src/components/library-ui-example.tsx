@@ -1,28 +1,22 @@
 /**
- * Example component demonstrating how to import and use components from library-ui
+ * Example component demonstrating Button component usage
  * 
- * Import components using the @library-ui alias:
- * import { Button, Input, Select, etc. } from '@library-ui/components'
+ * The Button component is now a local component in this project:
+ * import { Button } from '@/components/ui/button-library'
  */
 
-import {
-  Button,
-  Input,
-  Select,
-  Heading,
-  Subheading,
-} from '@library-ui/components'
+import { Button } from '@/components/ui/button-library'
 
 export function LibraryUIExample() {
   return (
     <div className="p-8 space-y-6">
       <div>
-        <Heading level="h2" className="mb-2">
-          Library UI Components Example
-        </Heading>
-        <Subheading>
-          These components are imported from the library-ui project
-        </Subheading>
+        <h2 className="text-2xl font-bold mb-2">
+          Button Component Example
+        </h2>
+        <p className="text-gray-600">
+          These buttons use the local Button component
+        </p>
       </div>
 
       <div className="space-y-4">
@@ -47,21 +41,6 @@ export function LibraryUIExample() {
               <path d="M12 5v14M5 12h14" />
             </svg>
           </Button>
-        </div>
-
-        <div>
-          <Input placeholder="Enter text..." />
-        </div>
-
-        <div>
-          <Select
-            options={[
-              { value: 'option1', label: 'Option 1' },
-              { value: 'option2', label: 'Option 2' },
-              { value: 'option3', label: 'Option 3' },
-            ]}
-            placeholder="Select an option"
-          />
         </div>
       </div>
     </div>

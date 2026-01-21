@@ -18,7 +18,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@library-ui': path.resolve(__dirname, '../library-ui/src'),
     },
   },
 })
