@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+body {
+  background-color: #faf9f7;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Force Urbanist on all headings - highest specificity */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Urbanist', sans-serif !important;
+  font-optical-sizing: auto;
+}
+
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 *,
+[class*="text-"] h1,
+[class*="text-"] h2,
+[class*="text-"] h3,
+[class*="text-"] h4,
+[class*="text-"] h5,
+[class*="text-"] h6 {
+  font-family: 'Urbanist', sans-serif !important;
+  font-optical-sizing: auto;
+}
+
+/* Ensure headings in components also use Urbanist */
+.font-heading,
+[class*="font-heading"],
+.font-heading * {
+  font-family: 'Urbanist', sans-serif !important;
+  font-optical-sizing: auto;
+}
+
+/* Override any font-sans on headings */
+h1.font-sans,
+h2.font-sans,
+h3.font-sans,
+h4.font-sans,
+h5.font-sans,
+h6.font-sans {
+  font-family: 'Urbanist', sans-serif !important;
+  font-optical-sizing: auto;
+}
