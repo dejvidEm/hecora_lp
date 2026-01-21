@@ -51,7 +51,7 @@ const defaultCards: Card[] = [
 ]
 
 export function CardsGridSection({
-  badge = 'Pre každé ubytovanie',
+  badge = 'Čo získate',
   heading = 'Výhody pre vás ako ubytovateľa',
   
   cards = defaultCards,
@@ -71,7 +71,14 @@ export function CardsGridSection({
           )}
           {heading && (
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-4 font-heading">
-              {heading}
+              {heading.includes('ako') ? (
+                <>
+                  {heading.split('ako')[0]}ako<br />
+                  {heading.split('ako')[1]}
+                </>
+              ) : (
+                heading
+              )}
             </h2>
           )}
 

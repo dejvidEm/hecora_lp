@@ -123,11 +123,11 @@ export function FAQSection({
                   className="border-none relative"
                 >
                   <AccordionTrigger className="bg-[#f5f1ed] rounded-full pl-8 pr-6 py-3 hover:no-underline hover:bg-[#e8e0d8] transition-colors [&>svg]:hidden [&[data-state=open]>div>svg]:rotate-45 flex items-center justify-between relative z-10">
-                    <span className="text-left text-[#1a2b4a] font-medium text-sm md:text-base flex-1">
+                    <span className="text-left text-[#1a2b4a] font-medium text-base md:text-base flex-1">
                       {faq.question}
                     </span>
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 ml-2 shadow-sm">
-                      <PlusIcon className="w-5 h-5 md:w-6 md:h-6 text-gray-500 transition-transform duration-300 ease-in-out" />
+                    <div className="w-14 h-14 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 ml-2 shadow-sm">
+                      <PlusIcon className="w-7 h-7 md:w-6 md:h-6 text-gray-500 transition-transform duration-300 ease-in-out" />
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="bg-white rounded-b-[24px] -mt-4 relative z-0 mx-2 origin-top">

@@ -25,35 +25,55 @@ export function HeaderActions() {
         <Button color="#9E8B61">Začať zdarma</Button>
       </div>
 
-      {/* Mobile Burger Icon */}
-      <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm"
-        aria-label="Toggle menu"
-      >
-        <svg
-          className="w-6 h-6 text-[#1a2b4a]"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      {/* Mobile Icons */}
+      <div className="md:hidden flex items-center gap-3">
+        {/* User Icon */}
+        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm">
+          <svg
+            className="w-6 h-6 text-[#9E8B61]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
+          </svg>
+        </div>
+
+        {/* Burger Icon */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm"
+          aria-label="Toggle menu"
         >
-          {isMenuOpen ? (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          ) : (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          )}
-        </svg>
-      </button>
+          <svg
+            className="w-7 h-7 text-[#9E8B61]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+      </div>
 
       {/* Mobile Dropdown Menu */}
       <div 

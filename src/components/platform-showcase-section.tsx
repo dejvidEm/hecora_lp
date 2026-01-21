@@ -37,7 +37,14 @@ export function PlatformShowcaseSection({
               )}
               {heading && (
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-6 md:mb-0 font-heading">
-                  {heading}
+                  {heading.includes('práve') ? (
+                    <>
+                      {heading.split('práve')[0]}práve<br />
+                      {heading.split('práve')[1]}
+                    </>
+                  ) : (
+                    heading
+                  )}
                 </h2>
               )}
             </div>

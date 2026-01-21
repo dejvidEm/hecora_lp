@@ -91,9 +91,9 @@ const defaultCards: FeatureCard[] = [
 ]
 
 export function FeaturesSection({
-  badge = 'Funkcie',
-  heading = 'Všetko, čo potrebujete',
-  description = 'Naša platforma ponúka všetky nástroje pre dokonalú správu vášho ubytovania.',
+  badge = 'Pre každé ubytovanie',
+  heading = 'Pre koho je platforma určená',
+  description = 'Platforma je navrhnutá pre ubytovacie zariadenia, ktoré chcú zjednodušiť komunikáciu s hosťami, automatizovať rutinné úlohy a ušetriť čas recepcii aj manažmentu.',
   cards = defaultCards,
 }: FeaturesSectionProps) {
   const [expandedCard, setExpandedCard] = useState<string | null>(null)
