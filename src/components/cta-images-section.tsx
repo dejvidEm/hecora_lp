@@ -49,7 +49,7 @@ export function CTAImagesSection({
 
 function CTAImageCard({ image }: { image: CTAImage }) {
   return (
-    <div className="relative rounded-[24px] overflow-hidden bg-gray-100 aspect-[4/3] group">
+    <div className="relative rounded-[24px] overflow-hidden bg-gray-100 aspect-[4/3] md:w-[634px] md:h-[420px] md:aspect-auto group">
       <img
         src={image.src}
         alt={image.alt}
@@ -68,16 +68,19 @@ function CTAImageCard({ image }: { image: CTAImage }) {
         }}
       />
       {/* Light Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors" />
+      <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors" />
       
       {/* Content - Centered in the middle */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-12 lg:px-16 text-center z-10">
-        <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-6 drop-shadow-lg font-heading">
+        <h3 
+          className="text-[38px] font-semibold text-white mb-6 drop-shadow-lg font-heading leading-[1.1]"
+          style={{ letterSpacing: '-0.02em' }}
+        >
           {image.title}
         </h3>
         <Button
           onClick={image.onButtonClick}
-          className="rounded-full bg-[#9E8B61] text-white hover:bg-[#9E8B61]/90 px-8 py-6 text-base font-medium shadow-lg"
+          className="rounded-full bg-[#9E8B61] text-white hover:bg-[#9E8B61]/90 px-[20px] py-6 text-[16px] font-medium font-heading shadow-lg"
         >
           {image.buttonText}
         </Button>

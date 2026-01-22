@@ -117,25 +117,25 @@ export function FeaturesSection({
   }, [api])
 
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-white">
+    <section className="w-full py-16 md:py-24 md:px-6 px-0 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-[40px]">
           {badge && (
             <Badge
               variant="custom"
-              className="mb-2 text-sm font-medium"
+              className="mb-[12px] text-sm font-medium"
             >
               {badge}
             </Badge>
           )}
           {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-2 font-heading">
+            <h2 className="md:text-[38px] text-[26px] font-semibold text-[#323232] mb-[12px] font-heading leading-[1.1]">
               {heading}
             </h2>
           )}
           {description && (
-            <p className="text-lg md:text-xl text-[#1a2b4a]/70 max-w-2xl mx-auto">
+            <p className="md:text-base text-[14px] text-[#818181] max-w-[350px] md:max-w-[490px] mx-auto font-sans font-normal">
               {description}
             </p>
           )}
@@ -145,7 +145,7 @@ export function FeaturesSection({
         <div className="w-full">
           {/* Desktop Grid - 4 cards, wider width */}
           <div className="hidden md:flex justify-center">
-            <div className="w-full grid grid-cols-4 gap-4">
+            <div className="flex gap-[12px]">
               {cards.map((card) => (
                 <FeatureCard
                   key={card.id}
@@ -158,7 +158,7 @@ export function FeaturesSection({
           </div>
 
           {/* Mobile Carousel - Smaller cards maintaining aspect ratio */}
-          <div className="md:hidden overflow-visible">
+          <div className="md:hidden overflow-visible pl-4 pr-2">
             <Carousel
               setApi={setApi}
               opts={{
@@ -192,7 +192,7 @@ export function FeaturesSection({
                   key={index}
                   onClick={() => api?.scrollTo(index)}
                   className={cn(
-                    'w-2 h-2 rounded-full transition-all',
+                    'w-2 h-2 rounded-full transition-all cursor-pointer',
                     current === index
                       ? 'bg-[#9E8B61] w-8'
                       : 'bg-gray-300 hover:bg-gray-400'
@@ -222,9 +222,9 @@ function FeatureCard({
   return (
     <div
       className={cn(
-        'relative rounded-[24px] p-6 md:p-8',
+        'relative rounded-[24px] p-6',
         'shadow-sm hover:shadow-md transition-all duration-300',
-        isMobile ? 'aspect-[3/4] min-h-[350px]' : 'h-full min-h-[300px] md:min-h-[400px]',
+        isMobile ? 'aspect-[3/4] min-h-[350px]' : 'h-full min-h-[300px] md:w-[311px] md:min-h-[400px]',
         'flex flex-col cursor-pointer overflow-hidden',
         'group'
       )}
@@ -237,22 +237,27 @@ function FeatureCard({
       onClick={onToggle}
     >
       {/* Gradient Overlay - Only at bottom for text readability */}
-      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent z-0" />
+      <div 
+        className={cn(
+          "absolute inset-x-0 bottom-0 z-0 transition-all duration-300",
+          isExpanded ? "h-2/3 bg-gradient-to-t from-black via-black/90 via-black/70 to-black/0" : "h-1/3 bg-gradient-to-t from-black/100 to-black/0"
+        )}
+      />
 
       {/* Plus/Minus Icon in Circle - Top Right */}
       <div className="absolute top-4 right-4 md:top-6 md:right-6 z-10">
-        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center hover:bg-gray-50 transition-all duration-300 cursor-pointer group-hover:scale-105 shadow-md">
+        <div className="w-[50px] h-[50px] rounded-full bg-white flex items-center justify-center hover:bg-gray-50 transition-all duration-500 cursor-pointer group-hover:scale-105 shadow-md">
           {isExpanded ? (
-            <MinusIcon className="w-5 h-5 md:w-6 md:h-6 text-[#9E8B61] transition-transform duration-300" />
+            <MinusIcon className="w-[18px] h-[18px] text-[#9E8B61] transition-transform duration-300" />
           ) : (
-            <PlusIcon className="w-5 h-5 md:w-6 md:h-6 text-[#9E8B61] transition-transform duration-300" />
+            <PlusIcon className="w-[18px] h-[18px] text-[#9E8B61] transition-transform duration-300" />
           )}
         </div>
       </div>
 
       {/* Card Content - Aligned to bottom left */}
       <div className="relative z-10 flex-1 flex flex-col justify-end items-start">
-        <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 font-heading">
+        <h3 className="text-[20px] font-semibold text-white mb-[16px] font-heading">
           {card.title}
         </h3>
         {card.description && (
@@ -265,7 +270,7 @@ function FeatureCard({
               transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
-            <p className="text-white text-sm md:text-base pt-2">
+            <p className="text-white text-base font-normal font-sans" style={{ letterSpacing: '-0.02em', lineHeight: '1.5' }}>
               {card.description}
             </p>
           </div>

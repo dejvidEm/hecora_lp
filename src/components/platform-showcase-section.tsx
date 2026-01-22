@@ -20,23 +20,23 @@ export function PlatformShowcaseSection({
   onButtonClick,
 }: PlatformShowcaseSectionProps) {
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-white">
+    <section className="w-full py-16 md:py-24 md:px-2 px-2 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Top Section */}
         <div className="mb-12 md:mb-16">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-8">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-[12px] md:gap-8">
             {/* Left Side - Badge, Heading */}
             <div className="flex-1">
               {badge && (
                 <Badge
                   variant="custom"
-                  className="mb-4 text-sm font-medium"
+                  className="mb-[12px] text-sm font-medium"
                 >
                   {badge}
                 </Badge>
               )}
               {heading && (
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-6 md:mb-0 font-heading">
+                <h2 className="text-[26px] md:text-[38px] font-semibold text-[#323232] md:mb-0 font-heading leading-[1.1]">
                   {heading.includes('práve') ? (
                     <>
                       {heading.split('práve')[0]}práve<br />
@@ -52,14 +52,14 @@ export function PlatformShowcaseSection({
             {/* Right Side - Description and Button */}
             <div className="flex-1 md:max-w-lg">
               {description && (
-                <p className="text-base md:text-lg text-[#1a2b4a]/70 mb-6">
+                <p className="text-[14px] md:text-base text-[#818181] mb-6 font-sans font-normal">
                   {description}
                 </p>
               )}
               {buttonText && (
                 <Button
                   onClick={onButtonClick}
-                  className="rounded-full bg-[#9E8B61] px-8 py-6 text-base text-white hover:bg-[#9E8B61]/90"
+                  className="rounded-full bg-[#9E8B61] text-white hover:bg-[#9E8B61]/90 px-[20px] py-6 text-[16px] font-medium font-heading shadow-lg"
                 >
                   {buttonText}
                 </Button>
@@ -69,7 +69,7 @@ export function PlatformShowcaseSection({
         </div>
 
         {/* Stat Images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[12px] md:gap-[12px]">
           {/* Left Image - matches height of two right images combined */}
           <div className="md:col-span-2 h-full">
             <StatImage
@@ -79,7 +79,7 @@ export function PlatformShowcaseSection({
             />
           </div>
           {/* Two Smaller Images - side by side on mobile, stacked vertically on desktop */}
-          <div className="grid grid-cols-2 md:flex md:flex-col gap-3 md:gap-4 md:col-span-1 h-full md:h-auto">
+          <div className="grid grid-cols-2 md:flex md:flex-col gap-[12px] md:gap-4 md:col-span-1 h-full md:h-auto">
             <StatImage
               src="/stat-2.jpg"
               alt="50% menej byrokracie"

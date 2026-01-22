@@ -15,10 +15,10 @@ export function Hero() {
       `}</style>
     <section className="relative flex flex-col min-h-screen bg-[#f5f1ed] px-6 pt-24 pb-0 overflow-visible">
       <div className="mx-auto max-w-4xl text-center flex-1 flex flex-col items-center justify-center">
-        <h1 className="mt-8 md:mt-0 mb-3 md:mb-6 text-balance text-4xl font-semibold leading-none tracking-tight text-[#1a2b4a] md:text-6xl lg:text-7xl font-heading">
+        <h1 className="mt-8 md:mt-0 mb-3 md:mb-6 text-balance text-[38px] font-semibold leading-[1.1] tracking-tight text-[#323232] font-heading">
           Vytvorte hosťom zážitok, na ktorý sa vrátia
         </h1>
-        <p className="mb-8 text-pretty text-base text-[#1a2b4a]/70 md:text-xl">
+        <p className="mb-8 text-pretty text-base text-[#818181] font-sans font-normal">
           Platforma sama zabezpečí všetky potrebné údaje, čím vám ušetrí čas a zníži zaťaženie recepcie.
         </p>
         <Button size="lg" className="rounded-full bg-[#9E8B61] px-8 py-6 text-base text-white hover:bg-[#9E8B61]/90 mb-8">

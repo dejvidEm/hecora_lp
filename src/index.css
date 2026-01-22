@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #faf9f7;
   font-family: 'Inter', sans-serif;

@@ -9,6 +9,7 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
+import { MoveLeft, MoveRight } from 'lucide-react'
 
 interface Card {
   id: string
@@ -78,20 +79,20 @@ export function CardsSliderSection({
     <section className="w-full py-16 md:py-24 px-6 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Top Section */}
-        <div className="mb-12 md:mb-16 relative">
+        <div className="mb-12 md:mb-[40px] relative">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-8">
             {/* Left Side - Badge, Heading */}
             <div className="flex-1">
               {badge && (
                 <Badge
                   variant="custom"
-                  className="mb-4 text-sm font-medium"
+                  className="mb-4 text-sm font-semibold"
                 >
                   {badge}
                 </Badge>
               )}
               {heading && (
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-6 md:mb-0 font-heading">
+                <h2 className="text-[38px] font-semibold text-[#323232] mb-6 md:mb-0 font-heading leading-[1.1]">
                   {heading.includes('pre') ? (
                     <>
                       {heading.split('pre')[0]}pre<br />
@@ -111,93 +112,71 @@ export function CardsSliderSection({
               onClick={() => api?.scrollPrev()}
               disabled={current === 0}
               className={cn(
-                "w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFEBE1] flex items-center justify-center transition-all shadow-sm",
+                "w-[48px] h-[48px] rounded-full bg-[#FFEBE1]/50 border flex items-center justify-center transition-all shadow-sm",
                 current === 0
                   ? "opacity-30 cursor-not-allowed"
-                  : "hover:bg-[#FFEBE1]/80 cursor-pointer"
+                  : "hover:bg-[#FFEBE1]/70 cursor-pointer"
               )}
+              style={{ borderColor: 'rgba(251, 135, 75, 0.2)' }}
               aria-label="Previous slide"
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-[#1a2b4a]"
-              >
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
+              <MoveLeft className="w-[20px] h-[20px] text-[#9E8B61]" />
             </button>
             <button
               onClick={() => api?.scrollNext()}
               disabled={current === cards.length - 1}
               className={cn(
-                "w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFEBE1] flex items-center justify-center transition-all shadow-sm",
+                "w-[48px] h-[48px] rounded-full bg-[#FFEBE1]/50 border flex items-center justify-center transition-all shadow-sm",
                 current === cards.length - 1
                   ? "opacity-30 cursor-not-allowed"
-                  : "hover:bg-[#FFEBE1]/80 cursor-pointer"
+                  : "hover:bg-[#FFEBE1]/70 cursor-pointer"
               )}
+              style={{ borderColor: 'rgba(251, 135, 75, 0.2)' }}
               aria-label="Next slide"
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-[#1a2b4a]"
-              >
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
+              <MoveRight className="w-[20px] h-[20px] text-[#9E8B61]" />
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Cards Slider */}
-        <div className="relative">
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: 'start',
-              slidesToScroll: 1,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {cards.map((card, index) => (
-                <CarouselItem
-                  key={card.id}
-                  className="pl-2 md:pl-4 basis-[75%] md:basis-[calc(35%-1rem)]"
-                >
-                  <CardItem card={card} number={index + 1} index={index} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-
-          {/* Dots Indicator - Mobile only */}
-          <div className="flex md:hidden justify-center gap-2 mt-6">
-            {cards.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={cn(
-                  'w-2 h-2 rounded-full transition-all',
-                  current === index
-                    ? 'bg-[#9E8B61] w-8'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                )}
-                aria-label={`Go to slide ${index + 1}`}
-              />
+      {/* Cards Slider - Extends beyond right edge */}
+      <div className="relative -mr-6 md:-mr-[calc((100vw-1280px)/2+24px)]">
+        <Carousel
+          setApi={setApi}
+          opts={{
+            align: 'start',
+            slidesToScroll: 1,
+          }}
+          className="w-full gap-[]"
+        >
+          <CarouselContent className="md:pl-[calc((100vw-1380px)/2+16px)] pr-6 md:pr-0">
+            {cards.map((card, index) => (
+              <CarouselItem
+                key={card.id}
+                className="basis-[75%] md:basis-[480px] md:flex-shrink-0"
+              >
+                <CardItem card={card} number={index + 1} index={index} />
+              </CarouselItem>
             ))}
-          </div>
+          </CarouselContent>
+        </Carousel>
+
+        {/* Dots Indicator - Mobile only */}
+        <div className="flex md:hidden justify-center gap-2 mt-6 px-6">
+          {cards.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={cn(
+                'w-2 h-2 rounded-full transition-all cursor-pointer',
+                current === index
+                  ? 'bg-[#9E8B61] w-8'
+                  : 'bg-gray-300 hover:bg-gray-400'
+              )}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -213,7 +192,7 @@ function CardItem({ card, number, index }: { card: Card; number: number; index: 
   return (
     <div
       className={cn(
-        'bg-[#F6F3EB] rounded-[24px] pt-8 md:pt-10 px-6 md:px-8 pb-6 md:pb-8',
+        'bg-[#F6F3EB] rounded-[24px] pt-8 md:pt-[50px] px-6 md:px-[50px] pb-6 md:pb-8',
         'shadow-sm hover:shadow-md transition-shadow',
         'h-full min-h-[400px] md:min-h-[500px]',
         'flex flex-col relative overflow-hidden'
@@ -227,20 +206,20 @@ function CardItem({ card, number, index }: { card: Card; number: number; index: 
       {card.icon && (
         <div className="mb-1 text-[#CC6431]">{card.icon}</div>
       )}
-      <h3 className="text-lg md:text-xl font-semibold text-[#1a2b4a] mb-1 font-heading">
+      <h3 className="text-lg md:text-xl font-semibold text-[#323232] mb-1 font-heading">
         {card.title}
       </h3>
       {card.description && (
-        <p className="text-[#1a2b4a]/70 text-xs md:text-sm flex-1">
+        <p className="text-[#818181] text-base flex-1 font-sans font-normal">
           {card.description}
         </p>
       )}
       
       {/* White Badge on the left side */}
       <div className={cn('absolute left-6 md:left-8 transform -translate-y-1/2 z-10', badgeTopPosition)}>
-        <span className="inline-flex items-center justify-center rounded-full border border-black/20 bg-white text-black px-5 py-2 gap-2 text-sm font-medium whitespace-nowrap shadow-md">
-          <span className="w-1.5 h-1.5 rounded-full bg-black flex-shrink-0" />
-          Badge
+        <span className="inline-flex items-center justify-center rounded-full bg-white text-[#323232] px-[18px] py-[16px] gap-[6px] text-sm font-medium whitespace-nowrap shadow-md">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#9E8B61] flex-shrink-0" />
+          Lorem ipsum dolor sit 
         </span>
       </div>
       

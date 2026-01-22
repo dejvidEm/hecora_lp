@@ -23,17 +23,17 @@ export function ImageGallerySection({
     <section className="w-full py-16 md:py-24 px-6 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-[40px]">
           {badge && (
             <Badge
               variant="custom"
-              className="mb-4 text-sm font-medium"
+              className="mb-[12px] text-sm font-medium"
             >
               {badge}
             </Badge>
           )}
           {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-4 font-heading">
+            <h2 className="text-[38px] font-semibold text-[#323232] mb-4 font-heading leading-[1.1]">
               {heading.includes(' v ') ? (
                 <>
                   {heading.split(' v ')[0]} v<br />
@@ -48,7 +48,7 @@ export function ImageGallerySection({
 
         {/* Images Container - wider on desktop */}
         <div className="w-full flex justify-center">
-          <div className="w-full md:w-[98%]">
+          <div className="w-full md:w-[1280px]">
             {/* All Images Stacked Vertically */}
             <div className="space-y-2 md:space-y-3">
               {/* Large Main Image */}
@@ -79,26 +79,26 @@ export function ImageGallerySection({
                   return (
                     <div
                       key={index}
-                      className="rounded-xl md:rounded-2xl overflow-hidden bg-[#F6F3EB] p-4 md:p-6 flex items-start gap-4 md:gap-6"
+                      className="rounded-xl md:rounded-2xl overflow-hidden bg-[#F6F3EB] px-6 py-10 flex items-start gap-4"
                       style={{
                         minHeight: '120px',
                       }}
                     >
                       {/* Number on the left top */}
-                      <div className="text-2xl md:text-3xl font-medium text-[#9E8B61] font-heading flex-shrink-0">
+                      <div className="text-[32px] font-medium text-[#9E8B61] font-heading flex-shrink-0">
                         {formattedNumber}
                       </div>
                       
                       {/* Heading and text on the right */}
                       <div className="flex-1 flex flex-col">
-                        <h3 className="text-base md:text-lg font-semibold text-[#323232] mb-1 font-heading">
+                        <h3 className="text-[20px] font-semibold text-[#323232] mb-[8px] font-heading">
                           {index === 0 
                             ? 'Pošlete hosťovi odkaz'
                             : index === 1 
                             ? 'Hosť vyplní online check-in'
                             : 'Hosť získa prístup k platforme'}
                         </h3>
-                        <p className="text-xs md:text-sm text-[#323232]/70">
+                        <p className="text-base text-[#818181] font-sans font-normal">
                           Ubytovatelia vedia jednoducho propagovať vlastné služby, wellness, zážitky alebo partnerské zľavy.
                         </p>
                       </div>

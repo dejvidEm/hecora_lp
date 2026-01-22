@@ -89,13 +89,13 @@ export function FAQSection({
             {badge && (
               <Badge
                 variant="custom"
-                className="mb-4 text-sm font-medium w-fit"
+                className="mb-3 text-sm font-medium w-fit"
               >
                 {badge}
               </Badge>
             )}
             {heading && (
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-6 font-heading">
+              <h2 className="text-[38px] font-semibold text-[#323232] mb-3 font-heading leading-[1.1]">
                 {heading.includes('vám') ? (
                   <>
                     {heading.split('vám')[0]}vám<br />
@@ -107,14 +107,14 @@ export function FAQSection({
               </h2>
             )}
             {description && (
-              <p className="text-base md:text-lg text-[#1a2b4a]/70">
+              <p className="text-base text-[#818181] md:max-w-[450px] font-sans font-normal">
                 {description}
               </p>
             )}
           </div>
 
           {/* Right Column - Accordion */}
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full  md:min-w-[650px]">
             <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq) => (
                 <AccordionItem
@@ -122,16 +122,16 @@ export function FAQSection({
                   value={faq.id}
                   className="border-none relative"
                 >
-                  <AccordionTrigger className="bg-[#f5f1ed] rounded-full pl-8 pr-6 py-3 hover:no-underline hover:bg-[#e8e0d8] transition-colors [&>svg]:hidden [&[data-state=open]>div>svg]:rotate-45 flex items-center justify-between relative z-10">
-                    <span className="text-left text-[#1a2b4a] font-medium text-base md:text-base flex-1">
+                  <AccordionTrigger className="bg-[#F6F3EB] rounded-full pl-8 pr-2 py-2 hover:no-underline hover:bg-[#e8e0d8] transition-colors cursor-pointer [&>svg]:hidden [&[data-state=open]>div>svg]:rotate-45 flex items-center justify-between relative z-10">
+                    <span className="text-left text-[#323232] font-medium text-base md:text-[18px] flex-1 font-heading">
                       {faq.question}
                     </span>
-                    <div className="w-14 h-14 md:w-12 md:h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 ml-2 shadow-sm">
-                      <PlusIcon className="w-7 h-7 md:w-6 md:h-6 text-gray-500 transition-transform duration-300 ease-in-out" />
+                    <div className="w-14 h-14 md:w-[50px] md:h-[50px] rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <PlusIcon className="w-7 h-7 md:w-[18px] md:h-[18px] text-[#9E8B61] transition-transform duration-300 ease-in-out" />
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="bg-white rounded-b-[24px] -mt-4 relative z-0 mx-2 origin-top">
-                    <div className="px-6 py-4 text-[#1a2b4a]/70 text-sm md:text-base pt-8">
+                    <div className="px-6 py-4 text-[#818181] text-base pt-8 font-heading font-normal">
                       {faq.answer}
                     </div>
                   </AccordionContent>

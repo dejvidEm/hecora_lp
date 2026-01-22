@@ -109,30 +109,30 @@ export function PricingSection({
     <section className="w-full py-16 md:py-24 px-6 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-10">
           {badge && (
             <Badge
               variant="custom"
-              className="mb-4 text-sm font-medium"
+              className="mb-3 text-sm font-medium"
             >
               {badge}
             </Badge>
           )}
           {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-8 font-heading">
+            <h2 className="text-[38px] font-semibold text-[#323232] mb-4 font-heading leading-[1.1]">
               {heading}
             </h2>
           )}
 
           {/* Billing Period Toggle */}
-          <div className="inline-flex bg-white rounded-full p-1 border border-gray-200 shadow-sm">
+          <div className="inline-flex bg-[#F6F3EB] gap-2 rounded-full p-1 shadow-sm">
             <button
               onClick={() => setBillingPeriod('monthly')}
               className={cn(
-                'px-6 py-2 rounded-full text-sm font-medium transition-colors',
+                'px-[14px] py-[10px] rounded-full text-sm font-medium cursor-pointer transition-colors',
                 billingPeriod === 'monthly'
-                  ? 'bg-[#8b7355] text-white'
-                  : 'text-gray-700 hover:text-gray-900'
+                  ? 'bg-white text-[#323232]'
+                  : 'text-[#757575] hover:text-gray-900'
               )}
             >
               Mesačné
@@ -140,10 +140,10 @@ export function PricingSection({
             <button
               onClick={() => setBillingPeriod('yearly')}
               className={cn(
-                'px-6 py-2 rounded-full text-sm font-medium transition-colors',
+                'px-[14px] py-[10px] rounded-full text-sm font-medium cursor-pointer transition-colors',
                 billingPeriod === 'yearly'
-                  ? 'bg-[#8b7355] text-white'
-                  : 'text-gray-700 hover:text-gray-900'
+                  ? 'bg-white text-[#323232]'
+                  : 'text-[#757575] hover:text-gray-900'
               )}
             >
               Ročné
@@ -153,14 +153,15 @@ export function PricingSection({
 
         {/* Desktop: Grid Layout */}
         <div className="hidden md:flex md:justify-center gap-0 md:gap-0 relative items-end">
+          <span className="absolute bottom-0 w-[600px] h-[100px] bg-[#F6F3EB]"></span>
           {plans.map((plan, index) => (
             <div
               key={plan.id}
               className={cn(
                 'relative',
-                index === 0 && 'z-10 -mr-4 w-[33%] h-[550px]',
-                index === 1 && 'z-20 w-[28%] h-[650px]',
-                index === 2 && 'z-10 -ml-4 w-[33%] h-[550px]'
+                index === 0 && 'z-10 -mr-4 w-[33%] h-[590px]',
+                index === 1 && 'z-20 mb-[50px] w-[420px] h-[580px]',
+                index === 2 && 'z-10 -ml-4 w-[33%] h-[590px]'
               )}
             >
               <PricingCard
@@ -231,7 +232,7 @@ function PricingCard({
   return (
     <div
       className={cn(
-        'rounded-2xl md:rounded-3xl px-8 md:px-10 lg:px-12 py-10 md:py-12 lg:py-14 flex flex-col h-full justify-start',
+        'rounded-2xl md:rounded-3xl p-[50px] flex flex-col h-full justify-start',
         plan.highlighted
           ? 'text-white'
           : 'bg-[#f5f1ed] text-[#1a2b4a]'
@@ -247,7 +248,7 @@ function PricingCard({
       {/* Price */}
       <div className="mb-4 flex items-baseline gap-2">
         <div className={cn(
-          "text-4xl md:text-5xl lg:text-6xl font-semibold",
+          "text-4xl md:text-5xl lg:text-6xl font-semibold font-heading",
           plan.highlighted ? "text-white" : "text-[#9E8B61]"
         )}>
           {price} €
@@ -259,23 +260,35 @@ function PricingCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-2xl md:text-3xl font-semibold mb-2 font-heading">{plan.name}</h3>
+      <h3 className={cn(
+        "text-[24px] font-semibold mb-2 font-heading",
+        plan.highlighted ? "text-white" : "text-[#323232]"
+      )}>{plan.name}</h3>
 
       {/* Description */}
-      <p className="text-sm md:text-base opacity-80 mb-6">
+      <p className={cn(
+        "text-[16px] mb-6 font-sans font-normal",
+        plan.highlighted ? "text-white opacity-80" : "text-[#818181]"
+      )}>
         {plan.description}
       </p>
 
       {/* Features */}
       <div className="flex-1 space-y-3 mb-8">
         {plan.features.map((feature, index) => (
-          <div key={index} className="flex items-start gap-3">
+          <div 
+            key={index} 
+            className={cn(
+              "flex items-start gap-3",
+              plan.highlighted && index === plan.features.length - 1 && "mb-8"
+            )}
+          >
             <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center flex-shrink-0 mt-0.5">
               <CheckIcon
                 className="w-3 h-3 text-[#9E8B61]"
               />
             </div>
-            <span className="text-sm md:text-base">{feature.text}</span>
+            <span className="text-sm md:text-base font-heading">{feature.text}</span>
           </div>
         ))}
       </div>
@@ -283,9 +296,9 @@ function PricingCard({
       {/* CTA Button */}
       <Button
         className={cn(
-          'w-full rounded-full py-6 text-base font-medium',
+          'w-full rounded-full py-6 text-base font-light',
           plan.highlighted
-            ? 'bg-white text-[#1a2b4a] hover:bg-gray-100'
+            ? 'bg-white text-[#9E8B61] hover:bg-gray-100 mb-8'
             : 'bg-[#9E8B61] text-white hover:bg-[#9E8B61]/90'
         )}
       >

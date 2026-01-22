@@ -2,6 +2,7 @@
 
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
+import { MapPin, Info, Star, ShoppingBag, Shield, MessageCircle } from 'lucide-react'
 
 interface Card {
   id: string
@@ -22,31 +23,37 @@ const defaultCards: Card[] = [
     id: '1',
     title: 'Online check-in bez starostí',
     description: 'Platforma sama zabezpečí všetky potrebné údaje, čím vám ušetrí čas a zníži zaťaženie recepcie.',
+    icon: <MapPin className="w-[24px] h-[24px]" />,
   },
   {
     id: '2',
     title: 'Menej telefonátov a otázok',
     description: 'Hostia nájdu všetko o pobyte, službách a okolí na jednom mieste — bez toho, aby vás museli kontaktovať.',
+    icon: <Info className="w-[24px] h-[24px]" />,
   },
   {
     id: '3',
     title: 'Profesionálny prvý dojem',
     description: 'Digitálny sprievodca s moderným dizajnom zvýši dôveru a spokojnosť hostí hneď od prvej minúty',
+    icon: <Star className="w-[24px] h-[24px]" />,
   },
   {
     id: '4',
     title: 'Online check-in bez starostí',
     description: 'Platforma sama zabezpečí všetky potrebné údaje, čím vám ušetrí čas a zníži zaťaženie recepcie.',
+    icon: <ShoppingBag className="w-[24px] h-[24px]" />,
   },
   {
     id: '5',
     title: 'Online check-in bez starostí',
     description: 'Platforma sama zabezpečí všetky potrebné údaje, čím vám ušetrí čas a zníži zaťaženie recepcie.',
+    icon: <Shield className="w-[24px] h-[24px]" />,
   },
   {
     id: '6',
     title: 'Online check-in bez starostí',
     description: 'Platforma sama zabezpečí všetky potrebné údaje, čím vám ušetrí čas a zníži zaťaženie recepcie.',
+    icon: <MessageCircle className="w-[24px] h-[24px]" />,
   },
 ]
 
@@ -57,20 +64,20 @@ export function CardsGridSection({
   cards = defaultCards,
 }: CardsGridSectionProps) {
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-white">
+    <section className="w-full pt-12 md:pt-20 pb-28 md:pb-40 px-6 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-[40px]">
           {badge && (
             <Badge
               variant="custom"
-              className="mb-4 text-sm font-medium"
+              className="mb-[12px] text-sm font-medium"
             >
               {badge}
             </Badge>
           )}
           {heading && (
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1a2b4a] mb-4 font-heading">
+            <h2 className="text-[38px] font-semibold text-[#323232] font-heading leading-[1.1]">
               {heading.includes('ako') ? (
                 <>
                   {heading.split('ako')[0]}ako<br />
@@ -86,7 +93,7 @@ export function CardsGridSection({
 
         {/* Cards Grid - 3 columns x 2 rows on desktop */}
         <div className="w-full flex justify-center">
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {cards.map((card) => (
               <CardItem key={card.id} card={card} />
             ))}
@@ -121,14 +128,14 @@ function CardItem({ card }: { card: Card }) {
   return (
     <div
       className={cn(
-        'bg-[#F6F3EB] rounded-[24px] p-6 md:p-8',
+        'bg-[#F6F3EB] rounded-[24px] p-[24px] md:p-[24px]',
         'shadow-sm hover:shadow-md transition-shadow',
-        'flex flex-row gap-4 md:gap-6 min-h-[140px] md:min-h-[160px] lg:min-h-[180px]'
+        'flex flex-row items-center gap-4 min-h-[140px] md:min-h-[160px] lg:min-h-[180px]'
       )}
     >
       {/* Icon in Circle - Left Side */}
-      <div className="flex-shrink-0">
-        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#9E8B61] flex items-center justify-center">
+      <div className="flex-shrink-0 mb-12">
+        <div className="w-[58px] h-[58px] rounded-full bg-[#9E8B61] flex items-center justify-center">
           {card.icon ? (
             <div className="text-white">{card.icon}</div>
           ) : (
@@ -139,11 +146,11 @@ function CardItem({ card }: { card: Card }) {
 
       {/* Card Content - Right Side */}
       <div className="flex-1 flex flex-col justify-start">
-        <h3 className="text-lg md:text-xl font-semibold text-[#1a2b4a] mb-2 font-heading">
+        <h3 className="text-[20px] font-semibold text-[#323232] mb-[8px] font-heading">
           {card.title}
         </h3>
         {card.description && (
-          <p className="text-[#1a2b4a]/70 text-xs md:text-sm">
+          <p className="text-[#818181] leading-[150%] letter-spacing-[-2%] text-base font-sans font-normal">
             {card.description}
           </p>
         )}
