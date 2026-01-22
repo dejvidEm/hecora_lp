@@ -92,8 +92,8 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-200 pt-2 mt-2">
-          <p className="text-left text-base text-gray-400 font-heading">
+        <div className="border-t border-[#F6F3EB] pt-2 mt-2">
+          <p className="text-left text-base text-[#929292] font-heading">
             © 2025 Nazov. Všetky práva vyhradené.
           </p>
         </div>
