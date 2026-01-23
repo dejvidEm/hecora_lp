@@ -79,20 +79,20 @@ export function CardsSliderSection({
     <section className="w-full py-16 md:py-24 px-6 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Top Section */}
-        <div className="mb-12 md:mb-[40px] relative">
+        <div className="mb-[32px] md:mb-[40px] relative">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-8">
             {/* Left Side - Badge, Heading */}
             <div className="flex-1">
               {badge && (
                 <Badge
                   variant="custom"
-                  className="mb-4 text-sm font-semibold"
+                  className="md:mb-4 mb-[12px] text-sm font-semibold"
                 >
                   {badge}
                 </Badge>
               )}
               {heading && (
-                <h2 className="text-[38px] font-semibold text-[#323232] mb-6 md:mb-0 font-heading leading-[1.1]">
+                <h2 className="md:text-[38px] text-[26px] font-semibold text-[#323232] mb-6 md:mb-0 font-heading leading-[1.1]">
                   {heading.includes('pre') ? (
                     <>
                       {heading.split('pre')[0]}pre<br />
@@ -169,10 +169,10 @@ export function CardsSliderSection({
               key={index}
               onClick={() => api?.scrollTo(index)}
               className={cn(
-                'w-2 h-2 rounded-full transition-all cursor-pointer',
+                'w-4 h-2 rounded-full transition-all cursor-pointer',
                 current === index
                   ? 'bg-[#9E8B61] w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
+                  : 'bg-[#F6F3EB] hover:bg-gray-400'
               )}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -192,7 +192,7 @@ function CardItem({ card, number, index }: { card: Card; number: number; index: 
   return (
     <div
       className={cn(
-        'bg-[#F6F3EB] rounded-[24px] pt-8 md:pt-[50px] px-6 md:px-[50px] pb-6 md:pb-8',
+        'bg-[#F6F3EB] rounded-[24px] pt-6 md:pt-[50px] px-6 md:px-[50px] pb-6 md:pb-8',
         'shadow-sm hover:shadow-md transition-shadow',
         'h-full min-h-[400px] md:min-h-[500px]',
         'flex flex-col relative overflow-hidden'
@@ -210,14 +210,14 @@ function CardItem({ card, number, index }: { card: Card; number: number; index: 
         {card.title}
       </h3>
       {card.description && (
-        <p className="text-[#818181] text-base flex-1 font-sans font-normal">
+        <p className="text-[#818181] text-[14px] md:text-base flex-1 font-sans font-normal">
           {card.description}
         </p>
       )}
       
       {/* White Badge on the left side */}
       <div className={cn('absolute left-6 md:left-8 transform -translate-y-1/2 z-10', badgeTopPosition)}>
-        <span className="inline-flex items-center justify-center rounded-full bg-white text-[#323232] px-[18px] py-[16px] gap-[6px] text-sm font-medium whitespace-nowrap shadow-md">
+        <span className="inline-flex items-center justify-center rounded-full bg-white text-[#323232] md:px-[18px] md:py-[16px] px-[14px] py-[10px] gap-[6px] text-sm font-medium whitespace-nowrap shadow-md">
           <span className="w-1.5 h-1.5 rounded-full bg-[#9E8B61] flex-shrink-0" />
           Lorem ipsum dolor sit 
         </span>
@@ -225,7 +225,7 @@ function CardItem({ card, number, index }: { card: Card; number: number; index: 
       
       {/* Image at bottom center - half out of card */}
       {card.image && (
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[5%] w-full max-w-[280px] md:max-w-[330px]">
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[5%] w-full max-w-[220px] md:max-w-[330px]">
           <img
             src={card.image}
             alt={card.title}

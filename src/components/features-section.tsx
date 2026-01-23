@@ -130,7 +130,7 @@ export function FeaturesSection({
             </Badge>
           )}
           {heading && (
-            <h2 className="md:text-[38px] text-[26px] font-semibold text-[#323232] mb-[12px] font-heading leading-[1.1]">
+            <h2 className="md:text-[38px] text-[26px] font-semibold text-[#323232] mb-2 md:mb-[12px] font-heading leading-[1.1]">
               {heading}
             </h2>
           )}
@@ -192,10 +192,10 @@ export function FeaturesSection({
                   key={index}
                   onClick={() => api?.scrollTo(index)}
                   className={cn(
-                    'w-2 h-2 rounded-full transition-all cursor-pointer',
+                    'w-4 h-2 rounded-full transition-all cursor-pointer',
                     current === index
                       ? 'bg-[#9E8B61] w-8'
-                      : 'bg-gray-300 hover:bg-gray-400'
+                      : 'bg-[#F6F3EB] hover:bg-gray-400'
                   )}
                   aria-label={`Go to slide ${index + 1}`}
                 />

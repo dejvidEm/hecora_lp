@@ -73,7 +73,7 @@ function CTAImageCard({ image }: { image: CTAImage }) {
       {/* Content - Centered in the middle */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 md:px-12 lg:px-16 text-center z-10">
         <h3 
-          className="text-[38px] font-semibold text-white mb-6 drop-shadow-lg font-heading leading-[1.1]"
+          className="md:text-[38px] text-[26px] font-semibold text-white mb-6 drop-shadow-lg font-heading leading-[1.1]"
           style={{ letterSpacing: '-0.02em' }}
         >
           {image.title}

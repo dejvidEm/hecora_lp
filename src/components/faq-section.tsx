@@ -81,7 +81,7 @@ export function FAQSection({
   faqs = defaultFAQs,
 }: FAQSectionProps) {
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-white">
+    <section className="w-full py-16 md:py-24 md:px-6 px-[16px] bg-white">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {/* Left Column - Badge, Heading, Description */}
@@ -95,7 +95,7 @@ export function FAQSection({
               </Badge>
             )}
             {heading && (
-              <h2 className="text-[38px] font-semibold text-[#323232] mb-3 font-heading leading-[1.1]">
+              <h2 className="md:text-[38px] text-[26px] font-semibold text-[#323232] mb-3 font-heading leading-[1.1]">
                 {heading.includes('vám') ? (
                   <>
                     {heading.split('vám')[0]}vám<br />
@@ -107,7 +107,7 @@ export function FAQSection({
               </h2>
             )}
             {description && (
-              <p className="text-base text-[#818181] md:max-w-[450px] font-sans font-normal">
+              <p className="md:text-base text-[14px] text-[#818181] md:max-w-[450px] font-sans font-normal">
                 {description}
               </p>
             )}
@@ -122,12 +122,12 @@ export function FAQSection({
                   value={faq.id}
                   className="border-none relative"
                 >
-                  <AccordionTrigger className="bg-[#F6F3EB] rounded-full pl-8 pr-2 py-2 hover:no-underline hover:bg-[#e8e0d8] transition-colors cursor-pointer [&>svg]:hidden [&[data-state=open]>div>svg]:rotate-45 flex items-center justify-between relative z-10">
+                  <AccordionTrigger className="bg-[#F6F3EB] rounded-full md:pl-8 pl-6 pr-2 py-2 hover:no-underline hover:bg-[#e8e0d8] transition-colors cursor-pointer [&>svg]:hidden [&[data-state=open]>div>svg]:rotate-45 flex items-center justify-between relative z-10">
                     <span className="text-left text-[#323232] font-medium text-base md:text-[18px] flex-1 font-heading">
                       {faq.question}
                     </span>
-                    <div className="w-14 h-14 md:w-[50px] md:h-[50px] rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                      <PlusIcon className="w-7 h-7 md:w-[18px] md:h-[18px] text-[#9E8B61] transition-transform duration-300 ease-in-out" />
+                    <div className="w-[46px] h-[46px] md:w-[50px] md:h-[50px] rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <PlusIcon className="w-[16px] h-[16px] md:w-[18px] md:h-[18px] text-[#9E8B61] transition-transform duration-300 ease-in-out" />
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="bg-white rounded-b-[24px] -mt-4 relative z-0 mx-2 origin-top">

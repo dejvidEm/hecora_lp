@@ -18,27 +18,27 @@ export function Footer() {
             <h3 className="text-[18px] font-semibold text-[#929292] mb-4 font-heading">Navigácia</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="#" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   O nás
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="#" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   Výhody
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="#" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   Funkcie
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="#" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   Cenník
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="#" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   FAQs
                 </a>
               </li>
@@ -50,17 +50,17 @@ export function Footer() {
             <h3 className="text-[18px] font-semibold text-[#929292] mb-4 font-heading">Dokumenty</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="#" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   Zásady ochrany osobných údajov
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="#" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   Všeobecné obchodné podmienky
                 </a>
               </li>
               <li>
-                <a href="#" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="#" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   Podmienky predplatného
                 </a>
               </li>
@@ -69,13 +69,13 @@ export function Footer() {
 
           {/* Kontakt Column */}
           <div className="flex flex-col">
-            <h3 className="text-[18px] font-semibold text-[#929292] mb-4 font-heading">Kontakt</h3>
+            <h3 className="md:text-[18px] text-[16px] font-semibold text-[#929292] mb-4 font-heading">Kontakt</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
                 <div className="w-[36px] h-[36px] rounded-full bg-[#F6F3EB] border border-[#9E8B61]/20 flex items-center justify-center flex-shrink-0">
                   <PhoneIcon className="w-[12px] h-[12px] text-[#9E8B61]" />
                 </div>
-                <a href="tel:+421944193950" className="text-[18px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
+                <a href="tel:+421944193950" className="md:text-[18px] text-[16px] font-semibold text-[#323232] hover:text-[#9E8B61] transition-colors font-heading">
                   +421 944 193 950
                 </a>
               </li>
@@ -93,7 +93,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-[#F6F3EB] pt-2 mt-2">
-          <p className="text-left text-base text-[#929292] font-heading">
+          <p className="md:text-left text-center text-[16px] md:text-base md:pt-0 pt-4 text-[#929292] font-heading">
             © 2025 Nazov. Všetky práva vyhradené.
           </p>
         </div>

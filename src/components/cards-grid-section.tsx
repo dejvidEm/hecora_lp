@@ -64,10 +64,10 @@ export function CardsGridSection({
   cards = defaultCards,
 }: CardsGridSectionProps) {
   return (
-    <section className="w-full pt-12 md:pt-20 pb-28 md:pb-40 px-6 bg-white">
+    <section className="w-full pt-12 md:pt-20 pb-28 md:pb-40 px-[16px] bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-[40px]">
+        <div className="text-center mb-[32px] md:mb-[40px]">
           {badge && (
             <Badge
               variant="custom"
@@ -77,7 +77,7 @@ export function CardsGridSection({
             </Badge>
           )}
           {heading && (
-            <h2 className="text-[38px] font-semibold text-[#323232] font-heading leading-[1.1]">
+            <h2 className="md:text-[38px] text-[26px] font-semibold text-[#323232] font-heading leading-[1.1]">
               {heading.includes('ako') ? (
                 <>
                   {heading.split('ako')[0]}ako<br />
@@ -93,7 +93,7 @@ export function CardsGridSection({
 
         {/* Cards Grid - 3 columns x 2 rows on desktop */}
         <div className="w-full flex justify-center">
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
             {cards.map((card) => (
               <CardItem key={card.id} card={card} />
             ))}
@@ -135,22 +135,22 @@ function CardItem({ card }: { card: Card }) {
     >
       {/* Icon in Circle - Left Side */}
       <div className="flex-shrink-0 mb-12">
-        <div className="w-[58px] h-[58px] rounded-full bg-[#9E8B61] flex items-center justify-center">
+        <div className="w-[40px] h-[40px] md:w-[58px] md:h-[58px] rounded-full bg-[#9E8B61] flex items-center justify-center">
           {card.icon ? (
-            <div className="text-white">{card.icon}</div>
+            <div className="text-white ">{card.icon}</div>
           ) : (
-            <DefaultIcon className="w-6 h-6 md:w-7 md:h-7 text-white" />
+            <DefaultIcon className="w-[18px] h-[18px] md:w-[24px] md:h-[24px] text-white" />
           )}
         </div>
       </div>
 
       {/* Card Content - Right Side */}
       <div className="flex-1 flex flex-col justify-start">
-        <h3 className="text-[20px] font-semibold text-[#323232] mb-[8px] font-heading">
+        <h3 className="md:text-[20px] text-[18px] font-semibold text-[#323232] mb-[8px] font-heading">
           {card.title}
         </h3>
         {card.description && (
-          <p className="text-[#818181] leading-[150%] letter-spacing-[-2%] text-base font-sans font-normal">
+          <p className="text-[#818181] text-[14px] leading-[150%] letter-spacing-[-2%] font-sans font-normal">
             {card.description}
           </p>
         )}

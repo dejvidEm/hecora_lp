@@ -106,7 +106,7 @@ export function PricingSection({
   }, [api])
 
   return (
-    <section className="w-full py-16 md:py-24 px-6 bg-white">
+    <section className="w-full py-16 md:py-24 md:px-6 px-[16px] bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12 md:mb-10">
@@ -119,7 +119,7 @@ export function PricingSection({
             </Badge>
           )}
           {heading && (
-            <h2 className="text-[38px] font-semibold text-[#323232] mb-4 font-heading leading-[1.1]">
+            <h2 className="md:text-[38px] text-[26px] font-semibold text-[#323232] mb-4 font-heading leading-[1.1]">
               {heading}
             </h2>
           )}
@@ -204,10 +204,10 @@ export function PricingSection({
                 key={index}
                 onClick={() => api?.scrollTo(index)}
                 className={cn(
-                  'w-2 h-2 rounded-full transition-all',
+                  'w-4 h-2 rounded-full transition-all',
                   current === index
                     ? 'bg-[#8b7355] w-8'
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    : 'bg-[#F6F3EB] hover:bg-gray-400'
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -232,7 +232,7 @@ function PricingCard({
   return (
     <div
       className={cn(
-        'rounded-2xl md:rounded-3xl p-[50px] flex flex-col h-full justify-start',
+        'rounded-2xl md:rounded-3xl md:p-[50px] p-[32px] flex flex-col h-full justify-start',
         plan.highlighted
           ? 'text-white'
           : 'bg-[#f5f1ed] text-[#1a2b4a]'

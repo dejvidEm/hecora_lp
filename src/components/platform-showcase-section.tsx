@@ -20,7 +20,7 @@ export function PlatformShowcaseSection({
   onButtonClick,
 }: PlatformShowcaseSectionProps) {
   return (
-    <section className="w-full py-16 md:py-24 md:px-2 px-2 bg-white">
+    <section className="w-full py-16 md:py-24 md:px-2 px-4 bg-white">
       <div className="mx-auto max-w-7xl">
         {/* Top Section */}
         <div className="mb-12 md:mb-16">
@@ -52,7 +52,7 @@ export function PlatformShowcaseSection({
             {/* Right Side - Description and Button */}
             <div className="flex-1 md:max-w-lg">
               {description && (
-                <p className="text-[14px] md:text-base text-[#818181] mb-6 font-sans font-normal">
+                <p className="text-[14px] md:text-base text-[#818181] mb-[20px] md:mb-6 font-sans font-normal">
                   {description}
                 </p>
               )}
